@@ -1,3 +1,4 @@
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -32,7 +33,184 @@ $handlerFront-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($handlerFront-theme);
 
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// // Custom Theming for Angular Material
+// // For more information: https://material.angular.io/guide/theming
+// @use '@angular/material' as mat;
+// // Plus imports for other components in your app.
+
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat.core();
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $handlerFront-primary: mat.define-palette(mat.$indigo-palette);
+// $handlerFront-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $handlerFront-warn: mat.define-palette(mat.$red-palette);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $handlerFront-theme: mat.define-light-theme((
+//   color: (
+//     primary: $handlerFront-primary,
+//     accent: $handlerFront-accent,
+//     warn: $handlerFront-warn,
+//   )
+// ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include mat.all-component-themes($handlerFront-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  font-variant: normal;
+}
+
+/**
+* Helpers
+**/
+$cols: 12;
+
+@mixin col-basis($basis) {
+  grid-column: span $basis;
+}
+
+@mixin col-x-list($col-name) {
+  @for $i from 1 through $cols {
+    &.#{$col-name}#{$i} {
+      @include col-basis($i);
+    }
+  }
+}
+
+/**
+* Responsive Grid system
+**/
+.container {
+  width: 100%;
+}
+
+@media screen and (min-width: 36em) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 62em) {
+  .container {
+    width: 62em;
+    margin: 0 auto;
+
+    &.fluid {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .container {
+    width: 75em;
+    margin: 0 auto;
+
+    &.fluid {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: .5em;
+
+  .col {
+    &.xs-hidden {
+      display: none;
+    }
+
+    @include col-x-list("xs");
+    /** .row .col.xs1 ... .row .col.xs12 **/
+
+    &.sm-hidden {
+      display: none;
+    }
+
+    @include col-x-list("sm");
+
+    &.md-hidden {
+      display: none;
+    }
+
+    @include col-x-list("md");
+
+    &.lg-hidden {
+      display: none;
+    }
+
+    @include col-x-list("lg");
+
+    &.xl-hidden {
+      display: none;
+    }
+
+    @include col-x-list("xl");
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/**
+* MatSnackBar design
+**/
+.mat-snack-bar-container {
+  &.failed {
+    background: rgba(240, 20, 0, .7);
+
+    .mat-simple-snack-bar-content {
+      color: rgb(10, 10, 10);
+    }
+
+    .mat-simple-snackbar-action {
+      color: rgb(100, 100, 100);
+    }
+  }
+
+  &.success {
+    background: rgba(20, 20, 200, .7);
+
+    .mat-simple-snack-bar-content {
+      color: rgb(240, 240, 240);
+    }
+
+    .mat-simple-snackbar-action {
+      color: rgb(240, 240, 240);
+    }
+  }
+}
