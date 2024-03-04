@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiRootUri: 'http://127.0.0.1:8080/api/v1/',
+  apiRootUri: 'http://localhost:8080/api/v1/',
   storage: {
     auth: {
       strategy: 'session',

@@ -3,11 +3,12 @@ import { ArticleService } from '../../services/article.service';
 import { take } from 'rxjs';
 import { ArticleType } from '../../types/Article/article-type';
 import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
