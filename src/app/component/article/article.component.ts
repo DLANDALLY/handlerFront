@@ -6,16 +6,20 @@ import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTableModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent implements OnInit{
   public articles: ArticleType[] = []
+
+  displayedColumns: string[] = ['id', 'nom', 'description', 'prix', 'remise', 'stock'];
+  dataSource = this.articles;
 
   constructor(
     private _articleService: ArticleService
