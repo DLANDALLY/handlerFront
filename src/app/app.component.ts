@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ArticleComponent } from "./component/article/article.component";
-import { SidnavComponent } from './component/sidnav/sidnav.component';
+import { HeaderComponent } from "./component/header/header.component";
+import { SidenavComponent } from "./component/sidenav/sidenav.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, ArticleComponent, SidnavComponent]
+    imports: [ HeaderComponent, SidenavComponent]
 })
 export class AppComponent {
   title = 'handlerFront';
