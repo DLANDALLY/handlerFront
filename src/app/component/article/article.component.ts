@@ -18,8 +18,8 @@ import {MatTableModule} from '@angular/material/table';
 export class ArticleComponent implements OnInit{
   public articles: ArticleType[] = []
 
-  displayedColumns: string[] = ['id', 'nom', 'description', 'prix', 'remise', 'stock'];
-  dataSource = this.articles;
+  // displayedColumns: string[] = ['id', 'nom', 'description', 'prix', 'remise', 'stock'];
+  // dataSource = this.articles;
 
   constructor(
     private _articleService: ArticleService
