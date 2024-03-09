@@ -1,11 +1,28 @@
-<mat-drawer-container class="example-container">
+<!-- <mat-drawer-container 
+    class="example-container" 
+    style="width: 100px; height: 100%; margin: 0px;">
     <mat-drawer 
+        style="height: 100%; width: 500px; background-color: cornflowerblue;"
         mode="side" 
         opened>
-        Drawer content
+       
     </mat-drawer>
-    <mat-drawer-content role="navigation">   
+    <mat-drawer-content
+        style="margin-left: 250px;" 
+        role="navigation">   
         <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>
+ 
+ -->
 
+
+<div class="side-nav">
+    <ul>
+        <li><a routerLink="/article">Article</a></li>
+        <li><a routerLink="/chat">ChatGPT</a></li>
+        <li><a routerLink="/parametres">Paramètres</a></li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
