@@ -7,19 +7,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-article',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTableModule],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.scss'
+    selector: 'app-article',
+    standalone: true,
+    templateUrl: './article.component.html',
+    styleUrl: './article.component.scss',
+    imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, MatTableModule, RouterOutlet]
 })
 export class ArticleComponent implements OnInit{
   public articles: ArticleType[] = []
-
-  // displayedColumns: string[] = ['id', 'nom', 'description', 'prix', 'remise', 'stock'];
-  // dataSource = this.articles;
 
   constructor(
     private _articleService: ArticleService

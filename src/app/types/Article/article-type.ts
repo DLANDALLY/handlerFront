@@ -5,4 +5,5 @@ export type ArticleType = {
   prix: Number,
   remise: number
   stock: number
+  photo: string
 }
