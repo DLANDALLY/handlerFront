@@ -1,13 +1,23 @@
 <div class="container">
     <div class="row">
-        <div class="col xs12" *ngFor="let article of articles">
+        <div class="col xs11"></div>
+        <div class="col xs1">
+            <button class="iconAdd" mat-icon-button color="primary" aria-label="Ajouter un article">
+                <a routerLink="/article">
+                    <mat-icon>add</mat-icon>
+                </a>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col xs3" *ngFor="let article of articles">
             <mat-card class="size-card">
                 <mat-card-header>
                     <mat-card-title> {{article.nom}} </mat-card-title>
                     <mat-card-subtitle>{{article.prix}}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
-                    <p>{{article.description}}</p>
+                    <p> {{article.photo}} </p>
                 </mat-card-content>
                 <mat-card-actions align="end">
                     <button mat-icon-button>
@@ -19,7 +29,6 @@
                 </mat-card-actions>
             </mat-card>
         </div>
-
     </div>
 </div>
 

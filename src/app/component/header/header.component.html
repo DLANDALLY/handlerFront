@@ -2,11 +2,26 @@
     <div class="row">
         <div class="col xs12">
             <mat-toolbar color="primary">
-                <button 
-                    mat-icon-button class="example-icon" 
-                    (click)="boolSideNav()">
+                <!-- menu -->
+                <button mat-icon-button [matMenuTriggerFor]="menu">
                     <mat-icon>menu</mat-icon>
                 </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <a routerLink="/article">
+                            <mat-icon>dialpad</mat-icon>
+                            <span>Redial</span>
+                        </a>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <mat-icon>voicemail</mat-icon>
+                        <span>Check voice mail</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>notifications_off</mat-icon>
+                        <span>Disable alerts</span>
+                    </button>
+                </mat-menu>
                 <span>My App</span>
                 <span class="example-spacer"></span>
                 <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -19,10 +34,7 @@
             </mat-toolbar>
         </div>
     </div>
-    <div class="row">
-        <div *ngIf="isboolMenu; then thenBlock"></div>
-        <ng-template #thenBlock>
-            <app-sidenav></app-sidenav>
-        </ng-template>
-    </div>
+    <router-outlet></router-outlet>
 </div>  
+
+
