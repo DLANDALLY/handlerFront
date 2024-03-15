@@ -15,7 +15,7 @@ export class ArticleService {
 
   public findFullArticle(): Observable<ArticleType[]> {
     return this._httpclient.get<ArticleType[]>(
-      this.endPoint
+      this.endPoint + "/simple"
     )
   }
 }
