@@ -1,39 +1,16 @@
-table {
-    width: 100%;
-    margin: 2%;
-    padding: 2%;
-    border: 1px;
-    background-color: rgba(128, 128, 128, 0.225);
-    box-shadow: 10px 5px 5px gray;
+mat-card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-#customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    margin: 5%;
+.row {
+    padding-left: 2%;
+    padding-right: 2%;
+}
 
-    td, th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    tr:hover {
-        background-color: #ddd;
-    }
-
-    th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #0452aa;
-        color: white;
-    }
-} 
-
-mat-card:hover{
-    background-color: #9bc6f8;
+.iconAdd {
+    margin-bottom: 20px;
+    position: fixed;
+    z-index: 999;
+    bottom: 20px;
+    right: 20px;
 }
