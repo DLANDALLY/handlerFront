@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "./component/header/header.component";
-import { SidenavComponent } from "./component/sidenav/sidenav.component";
 import { RouterOutlet } from '@angular/router';
 import { ArticleComponent } from './component/article/article.component';
 
@@ -9,7 +8,7 @@ import { ArticleComponent } from './component/article/article.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [ HeaderComponent, SidenavComponent, RouterOutlet, ArticleComponent]
+    imports: [ HeaderComponent, RouterOutlet, ArticleComponent]
 })
 export class AppComponent {
   title = 'handlerFront';

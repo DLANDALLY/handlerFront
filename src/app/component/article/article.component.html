@@ -2,10 +2,8 @@
     <div class="row">
         <div class="col xs11"></div>
         <div class="col xs1">
-            <button class="iconAdd" mat-mini-fab color="primary" aria-label="Ajouter un article">
-                <a routerLink="/addarticle">
+            <button class="iconAdd" (click)="openDialog()" mat-mini-fab color="primary" aria-label="Ajouter un article">
                     <mat-icon>add</mat-icon>
-                </a>
             </button>
         </div>
     </div>
@@ -30,6 +28,9 @@
             </mat-card>
         </div>
     </div>
+    @if (article) {
+    <li>You chose: <em>{{article.nom}}</em></li>
+    }
 </div>
 
 <!-- <div class="container">

@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography">
+    <h2>Ajouter un article</h2>
+    <form (ngSubmit)="submitForm()">
+        <!-- Input name -->
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput placeholder="Placeholder" [(ngModel)]="nom" name="nom">
+            </mat-form-field>
+        </p>
+        
+        <!-- Input prix -->
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>prix</mat-label>
+                <input matInput type="number" class="example-right-align" placeholder="0" [(ngModel)]="prix" name="prix">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>.00</span>
+            </mat-form-field>
+        </p>
+        
+        <!-- Input stock -->
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>stock</mat-label>
+                <input matInput type="number" class="example-right-align" placeholder="0" [(ngModel)]="stock" name="stock">
+            </mat-form-field>
+        </p>
+        
+        <!-- Input description -->
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>description</mat-label>
+                <textarea matInput [(ngModel)]="description" name="description"></textarea>
+            </mat-form-field>
+        </p>
+        
+        <!-- Input photo -->
+        <p>
+            <span>Image</span>
+            <input type="file" id="image" name="image" (change)="onFileSelected($event)" [(ngModel)]="photo">
+        </p>
+
+
+    <button mat-button mat-dialog-close>Annuler</button>
+    <button mat-button type="submit">Valider</button>
+</form>
+
+</mat-dialog-content>
+
