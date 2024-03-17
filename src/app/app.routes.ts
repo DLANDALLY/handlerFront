@@ -4,7 +4,7 @@ import { AddArticleComponent } from './component/article/add-article/add-article
 
 export const routes: Routes = [
     { path: 'article', component: ArticleComponent, children: [
-        { path: 'addarticle', component: AddArticleComponent },
+        { path: 'add', component: AddArticleComponent },
     ]},
     { path: '', redirectTo: '/article', pathMatch: 'full' },
 ];
